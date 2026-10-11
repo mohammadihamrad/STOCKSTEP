@@ -444,3 +444,83 @@ body {
     padding: 20px;
     box-sizing: border-box;
 }
+/* =========================
+   PRODUCT HOVER
+========================= */
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media screen and (max-width: 900px) {
+    .product-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 94%;
+        gap: 16px;
+        padding: 25px 0;
+    }
+
+    .product-image {
+        height: 200px;
+    }
+
+    .product-info {
+        padding: 15px;
+    }
+}
+/* =========================
+   MOBILE
+========================= */
+
+@media screen and (max-width: 600px) {
+    .product-container {
+        grid-template-columns: minmax(0, 1fr);
+        width: 92%;
+        gap: 20px;
+        padding: 20px 0;
+    }
+
+    .product-card {
+        width: 100%;
+        min-width: 0;
+        border-radius: 16px;
+    }
+
+    .product-image {
+        height: auto;
+        aspect-ratio: 4 / 3;
+    }
+
+    .product-info {
+        padding: 16px;
+    }
+
+    .product-info h3 {
+        font-size: 17px;
+    }
+
+    .product-info p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    html,
+    body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    img {
+        max-width: 100%;
+    }
+}
+
