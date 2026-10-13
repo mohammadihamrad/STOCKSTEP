@@ -332,9 +332,83 @@ body {
 
 
 /* =========================
-   PRODU
-@media (max-width: 900px) {
+   CATEGORY HOVER
+========================= */
 
+.category-card:hover {
+    transform: translateY(-8px);
+    border-color: #555;
+    background: #1b1b1b;
+}
+
+/* =========================
+   PRODUCTS
+========================= */
+
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
+    direction: rtl;
+}
+
+.product-card {
+    min-width: 0;
+    width: 100%;
+    background: #1f2937;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+.product-image {
+    width: 100%;
+    height: 320;
+    overflow: hidden;
+}
+
+.product-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    transition: transform 0.4s;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.product-info {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.product-info h3 {
+    margin-bottom: 8px;
+}
+
+.product-info p {
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media screen and (max-width: 900px) {
     .nav {
         display: none;
     }
@@ -355,113 +429,9 @@ body {
     }
 
     .category-container {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .product-container {
-        grid-template-columns: 1fr;
-    }
-
-    .product-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.product-card {
-    background: #1f2937;
-    border-radius: 18px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-}
-
-    .hero-shoe {
-        width: 300px;
-        height: 300px;
-    }
-
-    .shoe-placeholder {
-        width: 300px;
-        height: 300px;
-    }
-}
-.product-image {
-    width: 100%;
-    height: 220px;
-    overflow: hidden;
-    border-radius: 14px 14px 0 0;
-}
-
-.product-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: 0.4s;
-}
-
-.product-card:hover .product-image img {
-    transform: scale(1.05);
-}
-/* STOCKSTEP PRODUCT CARDS */
-
-.product-container {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 25px;
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 0;
-    direction: rtl;
-}
-
-.product-card {
-    width: 100%;
-    background: #1f2937;
-    border-radius: 18px;
-    overflow: hidden;
-    box-sizing: border-box;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-}
-
-.product-image {
-    width: 100%;
-    height: 240px !important;
-    overflow: hidden;
-}
-
-.product-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.product-info {
-    padding: 20px;
-    box-sizing: border-box;
-}
-/* =========================
-   PRODUCT HOVER
-========================= */
-
-.product-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
-}
-
-.product-card:hover .product-image img {
-    transform: scale(1.05);
-}
-
-/* =========================
-   TABLET
-========================= */
-
-@media screen and (max-width: 900px) {
     .product-container {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         width: 94%;
@@ -476,17 +446,138 @@ body {
     .product-info {
         padding: 15px;
     }
+
+    .hero-shoe {
+        width: 300px;
+        height: 300px;
+    }
+
+    .shoe-placeholder {
+        width: 100%;
+        height: 100%;
+    }
 }
 /* =========================
    MOBILE
 ========================= */
 
 @media screen and (max-width: 600px) {
+    html,
+    body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    .header {
+        padding: 15px 5%;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .nav {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .hero {
+        min-height: 0;
+        padding: 45px 6% 35px;
+        gap: 25px;
+        box-sizing: border-box;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .hero-label {
+        font-size: 12px;
+        letter-spacing: 3px;
+    }
+
+    .hero h1 {
+        font-size: clamp(36px, 9vw, 48px);
+        line-height: 1.4;
+        margin: 18px 0;
+        overflow-wrap: anywhere;
+    }
+
+    .hero p {
+        max-width: 100%;
+        font-size: 15px;
+        line-height: 2;
+        margin: 0 auto 24px;
+    }
+
+    .hero-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .hero-buttons a,
+    .hero-buttons button {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .hero-shoe {
+        width: 100%;
+        max-width: 340px;
+        height: auto;
+        min-height: 0;
+        aspect-ratio: 4 / 3;
+        margin: 0 auto;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .shoe-placeholder {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 20px;
+    }
+
+    .shoe-placeholder img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+/* =========================
+   MOBILE PRODUCT LAYOUT
+========================= */
+
+@media screen and (max-width: 600px) {
+    .shoe-glow {
+        width: 80%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
     .product-container {
-        grid-template-columns: minmax(0, 1fr);
+        grid-template-columns: 1fr !important;
         width: 92%;
         gap: 20px;
         padding: 20px 0;
+        box-sizing: border-box;
     }
 
     .product-card {
@@ -496,8 +587,10 @@ body {
     }
 
     .product-image {
+        width: 100%;
         height: auto;
         aspect-ratio: 4 / 3;
+        overflow: hidden;
     }
 
     .product-info {
@@ -510,16 +603,5 @@ body {
 
     .product-info p {
         font-size: 14px;
-        line-height: 1.8;
-    }
-
-    html,
-    body {
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
-    img {
-        max-width: 100%;
     }
 }
