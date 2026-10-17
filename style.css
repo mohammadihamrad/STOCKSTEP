@@ -605,3 +605,13 @@ body {
         font-size: 14px;
     }
 }
+/* HERO HOVER - MOUSE DEVICES ONLY */
+@media (hover: hover) and (pointer: fine) {
+    .hero-shoe:hover .shoe-placeholder img {
+        transform: rotate(-2deg) scale(1.03);
+    }
+
+    .hero-shoe:hover .shoe-placeholder {
+        transform: rotate(-8deg) scale(1.08);
+    }
+}
