@@ -235,15 +235,6 @@ body {
     transition: 0.5s;
 }
 
-.hero-shoe:hover .shoe-placeholder img {
-    transform: rotate(-2deg) scale(1.03);
-}
-
-.hero-shoe:hover .shoe-placeholder {
-    transform:
-        rotate(-8deg)
-        scale(1.08);
-}
 
 
 /* =========================
